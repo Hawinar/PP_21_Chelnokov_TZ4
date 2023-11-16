@@ -16,7 +16,7 @@ public class PlayerView : MonoBehaviour
 
     private void Update()
     {
-       _scoreTMP.text = GameManager.Score.ToString();
+        _scoreTMP.text = GameManager.Score.ToString();
 
         if (GameObject.FindGameObjectWithTag("Player") == null)
         {

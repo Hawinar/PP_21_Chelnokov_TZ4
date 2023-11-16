@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ArcController : MonoBehaviour
 {
@@ -26,7 +25,7 @@ public class ArcController : MonoBehaviour
                 break;
             case "Player":
                 Destroy(collision.gameObject);
-                if(GameManager.BestScore < GameManager.Score)
+                if (GameManager.BestScore < GameManager.Score)
                     GameManager.BestScore = GameManager.Score;
                 break;
         }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -21,11 +20,10 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         float y = 0;
-        while(y < 6 && y > -6)
+        while (y < 6 && y > -6)
         {
             y = Random.Range(-10, 10);
         }
-        Instantiate(_obstacles[Random.Range(0,_obstacles.Count)], new Vector3(Random.Range(-10f, 7f), y, 0), new Quaternion(0, 0, 0, 0));
+        Instantiate(_obstacles[Random.Range(0, _obstacles.Count)], new Vector3(Random.Range(-10f, 7f), y, 0), new Quaternion(0, 0, 0, 0));
     }
-
 }

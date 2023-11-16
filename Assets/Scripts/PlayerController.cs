@@ -6,26 +6,26 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private float _rotateSpeed;
     private float _rotation;
-    private float _lateRotation;
+    private float _lastRotation;
 
     private float _afkTime = 0f;
 
     void Start()
     {
-        _lateRotation = _rotation = 0;
+        _lastRotation = _rotation = 0;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (_rotation == _lateRotation)
+        if (_rotation == _lastRotation)
         {
             _afkTime += 0.1f * Time.deltaTime;
         }
-        if (_rotation != _lateRotation)
+        if (_rotation != _lastRotation)
         {
             _afkTime = 0;
-            _lateRotation = _rotation;
+            _lastRotation = _rotation;
             _animator.speed = 0;
             _animator.Play("PingPong", 0, 0f);
         }
@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
             _animator.speed = 1;
         }
         _rotation = Input.GetAxis("Horizontal") * _rotateSpeed * Time.deltaTime;
-
     }
     private void LateUpdate()
     {
