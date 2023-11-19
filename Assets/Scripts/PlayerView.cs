@@ -17,13 +17,7 @@ public class PlayerView : MonoBehaviour
     private void Update()
     {
         _scoreTMP.text = GameManager.Score.ToString();
-
-        if (GameObject.FindGameObjectWithTag("Player") == null)
-        {
-            _gameOverUI.SetActive(true);
-            _bestScoreTMP.text = GameManager.BestScore.ToString();
-            Time.timeScale = 0f;
-        }
+        _bestScoreTMP.text = GameManager.BestScore.ToString();
     }
     public void Restart()
     {

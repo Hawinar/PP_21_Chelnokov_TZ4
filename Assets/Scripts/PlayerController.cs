@@ -37,6 +37,6 @@ public class PlayerController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        transform.Rotate(0f, 0f, _rotation);
+        _player.transform.Rotate(0f, 0f, _rotation);
     }
 }
